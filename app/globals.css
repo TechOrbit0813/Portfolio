@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* Dark mode driven by a `.dark` class on <html> (set by next-themes). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #4361ee;
+  --color-brand-dark: #3f37c9;
+  --color-accent: #4895ef;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Rotating gradient ring around the hero profile photo. */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+/* Continuous right-to-left marquee (used by the certifications strip). */
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Move by half the track width. The content is duplicated for a seamless loop. */
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee-rtl {
+  animation: marquee-rtl 30s linear infinite;
+}
+/* Pause on hover so users can look at a badge. */
+.marquee-group:hover .animate-marquee-rtl {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl {
+    animation: none;
+  }
+}
+
+/* Hide scrollbar on horizontal carousels but keep scrolling. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle technical grid used inside the hero portrait card. */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(67, 97, 238, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(67, 97, 238, 0.12) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
