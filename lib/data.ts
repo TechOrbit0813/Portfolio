@@ -396,6 +396,36 @@ export const projects: Project[] = [
     source: "#",
   },
   {
+    title: "Med Matrix | AI Lab Review & Personalized Protocol Automation",
+    category: ["ai", "automation", "industry"],
+    image: "/assets/projects/med-matrix.webp",
+    gallery: [
+      "/assets/gallery/med-matrix (1).png",
+      "/assets/gallery/med-matrix (2).png",
+      "/assets/gallery/med-matrix (3).png",
+    ],
+    description:
+      "A secure clinical document-automation workflow that extracts and normalizes 80+ laboratory biomarkers, populates review templates, and generates provider-reviewed longevity, hormone, nutrition, and supplementation protocol drafts.",
+    stack: ["Python", "Claude", "OCR", "Document Automation", "Clinical Data Validation", "RBAC and Audit Logs"],
+    demo: "https://medmatrixusa.com/",
+    source: "#",
+  },
+  {
+    title: "Boulder Longevity Institute | AI-Assisted Longevity Assessment & Protocol Generation",
+    category: ["ai", "saas", "automation", "industry"],
+    image: "/assets/projects/boulder.webp",
+    gallery: [
+      "/assets/gallery/boulder (1).png",
+      "/assets/gallery/boulder (2).png",
+      "/assets/gallery/boulder (3).png",
+    ],
+    description:
+      "An AI-assisted longevity platform that connects patient intake, laboratory normalization, controlled protocol generation, provider approval, and longitudinal biomarker tracking in one secure clinical workflow.",
+    stack: ["Claude", "Document AI", "OCR", "PDF and CSV Processing", "Clinical Workflow Automation", "RBAC and Audit Logs"],
+    demo: "https://boulderlongevity.com/",
+    source: "#",
+  },
+  {
     title: "Creativo AI | Marketing Content and Ad Creation",
     category: ["ai", "saas", "automation"],
     image: "/assets/projects/creativo-ai.webp",
