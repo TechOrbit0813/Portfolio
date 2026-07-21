@@ -312,6 +312,70 @@ export const certificationBadges: CertificationBadge[] = [
   },
 ];
 
+export type AdditionalCertificate = {
+  title: string;
+  image: string;
+  alt: string;
+  href: string;
+};
+
+export const additionalCertificates: AdditionalCertificate[] = [
+  {
+    title: "Python",
+    image: "/assets/images/certificates/python_basic%20certificate.png",
+    alt: "HackerRank Python Basic certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/a671879b6c49",
+  },
+  {
+    title: "Go",
+    image: "/assets/images/certificates/golang_intermediate%20certificate.png",
+    alt: "HackerRank Go Intermediate certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/ca693d4fa588",
+  },
+  {
+    title: "C#",
+    image: "/assets/images/certificates/c_sharp_basic%20certificate.png",
+    alt: "HackerRank C# Basic certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/970365848f94",
+  },
+  {
+    title: "React",
+    image: "/assets/images/certificates/react_basic%20certificate.png",
+    alt: "HackerRank React Basic certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/65ba3280192d",
+  },
+  {
+    title: "JavaScript",
+    image: "/assets/images/certificates/javascript_intermediate%20certificate.png",
+    alt: "HackerRank JavaScript Intermediate certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/931df84abdf1",
+  },
+  {
+    title: "SQL (Advanced)",
+    image: "/assets/images/certificates/sql_advanced%20certificate.png",
+    alt: "HackerRank SQL Advanced certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/b4ce03443763",
+  },
+  {
+    title: "Frontend Developer",
+    image: "/assets/images/certificates/frontend_developer_react%20certificate.png",
+    alt: "HackerRank Frontend Developer React certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/efa1bdb505b7",
+  },
+  {
+    title: "REST API",
+    image: "/assets/images/certificates/rest_api_intermediate%20certificate.png",
+    alt: "HackerRank REST API Intermediate certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/33d9a4e62ac2",
+  },
+  {
+    title: "Software Engineer",
+    image: "/assets/images/certificates/software_engineer%20certificate.png",
+    alt: "HackerRank Software Engineer certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/c0a52353d35f",
+  },
+];
+
 export type ProjectCategory = "ai" | "saas" | "automation" | "industry";
 
 export const projectFilters: { key: "all" | ProjectCategory; label: string }[] = [
