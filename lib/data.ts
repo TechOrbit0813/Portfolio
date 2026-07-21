@@ -312,6 +312,70 @@ export const certificationBadges: CertificationBadge[] = [
   },
 ];
 
+export type AdditionalCertificate = {
+  title: string;
+  image: string;
+  alt: string;
+  href: string;
+};
+
+export const additionalCertificates: AdditionalCertificate[] = [
+  {
+    title: "Python",
+    image: "/assets/images/certificates/python_basic%20certificate.png",
+    alt: "HackerRank Python Basic certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/a671879b6c49",
+  },
+  {
+    title: "Go",
+    image: "/assets/images/certificates/golang_intermediate%20certificate.png",
+    alt: "HackerRank Go Intermediate certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/ca693d4fa588",
+  },
+  {
+    title: "C#",
+    image: "/assets/images/certificates/c_sharp_basic%20certificate.png",
+    alt: "HackerRank C# Basic certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/970365848f94",
+  },
+  {
+    title: "React",
+    image: "/assets/images/certificates/react_basic%20certificate.png",
+    alt: "HackerRank React Basic certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/65ba3280192d",
+  },
+  {
+    title: "JavaScript",
+    image: "/assets/images/certificates/javascript_intermediate%20certificate.png",
+    alt: "HackerRank JavaScript Intermediate certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/931df84abdf1",
+  },
+  {
+    title: "SQL (Advanced)",
+    image: "/assets/images/certificates/sql_advanced%20certificate.png",
+    alt: "HackerRank SQL Advanced certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/b4ce03443763",
+  },
+  {
+    title: "Frontend Developer",
+    image: "/assets/images/certificates/frontend_developer_react%20certificate.png",
+    alt: "HackerRank Frontend Developer React certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/efa1bdb505b7",
+  },
+  {
+    title: "REST API",
+    image: "/assets/images/certificates/rest_api_intermediate%20certificate.png",
+    alt: "HackerRank REST API Intermediate certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/33d9a4e62ac2",
+  },
+  {
+    title: "Software Engineer",
+    image: "/assets/images/certificates/software_engineer%20certificate.png",
+    alt: "HackerRank Software Engineer certificate earned by Chris Geyer",
+    href: "https://www.hackerrank.com/certificates/iframe/c0a52353d35f",
+  },
+];
+
 export type ProjectCategory = "ai" | "saas" | "automation" | "industry";
 
 export const projectFilters: { key: "all" | ProjectCategory; label: string }[] = [
@@ -338,11 +402,11 @@ export const projects: Project[] = [
   {
     title: "Moonshot AI | Ecommerce Conversion Optimization",
     category: ["ai", "saas"],
-    image: "/assets/projects/moonshot-ai.webp",
+    image: "/assets/images/projects/moonshot-ai.webp",
     gallery: [
-      "/assets/gallery/moonshot (1).png",
-      "/assets/gallery/moonshot (2).png",
-      "/assets/gallery/moonshot (3).png",
+      "/assets/images/gallery/moonshot (1).png",
+      "/assets/images/gallery/moonshot (2).png",
+      "/assets/images/gallery/moonshot (3).png",
     ],
     description:
       "An AI-enabled optimization platform for evaluating ecommerce experiences, identifying conversion opportunities, and turning performance signals into focused storefront experiments.",
@@ -353,11 +417,11 @@ export const projects: Project[] = [
   {
     title: "Groove | Financial Wellness and Money Confidence",
     category: ["saas", "industry"],
-    image: "/assets/projects/groove.webp",
+    image: "/assets/images/projects/groove.webp",
     gallery: [
-      "/assets/gallery/groove (1).png",
-      "/assets/gallery/groove (2).png",
-      "/assets/gallery/groove (3).png",
+      "/assets/images/gallery/groove (1).png",
+      "/assets/images/gallery/groove (2).png",
+      "/assets/images/gallery/groove (3).png",
     ],
     description:
       "A financial wellness product that combines goal planning, educational content, cash-flow visibility, guided activities, rewards, and an AI-supported user experience.",
@@ -368,11 +432,11 @@ export const projects: Project[] = [
   {
     title: "Sportsbox AI | 3D Golf Motion Coaching",
     category: ["ai", "industry"],
-    image: "/assets/projects/sportsbox-ai.webp",
+    image: "/assets/images/projects/sportsbox-ai.webp",
     gallery: [
-      "/assets/gallery/sportsbox (1).png",
-      "/assets/gallery/sportsbox (2).png",
-      "/assets/gallery/sportsbox (3).png",
+      "/assets/images/gallery/sportsbox (1).png",
+      "/assets/images/gallery/sportsbox (2).png",
+      "/assets/images/gallery/sportsbox (3).png",
     ],
     description:
       "A motion-analysis and coaching platform that converts golf swings into 3D performance data, visual feedback, and actionable insights for athletes and coaches.",
@@ -383,11 +447,11 @@ export const projects: Project[] = [
   {
     title: "Boddle Learning | Adaptive K-6 Math Platform",
     category: ["ai", "industry"],
-    image: "/assets/projects/boddlelearning.webp",
+    image: "/assets/images/projects/boddlelearning.webp",
     gallery: [
-      "/assets/gallery/boddlelearning (1).png",
-      "/assets/gallery/boddlelearning (2).png",
-      "/assets/gallery/boddlelearning (3).png",
+      "/assets/images/gallery/boddlelearning (1).png",
+      "/assets/images/gallery/boddlelearning (2).png",
+      "/assets/images/gallery/boddlelearning (3).png",
     ],
     description:
       "A game-based learning platform that adapts math practice to each student, gives educators useful progress data, and keeps younger learners engaged through guided play.",
@@ -398,11 +462,11 @@ export const projects: Project[] = [
   {
     title: "Med Matrix | AI Lab Review & Personalized Protocol Automation",
     category: ["ai", "automation", "industry"],
-    image: "/assets/projects/med-matrix.webp",
+    image: "/assets/images/projects/med-matrix.webp",
     gallery: [
-      "/assets/gallery/med-matrix (1).png",
-      "/assets/gallery/med-matrix (2).png",
-      "/assets/gallery/med-matrix (3).png",
+      "/assets/images/gallery/med-matrix (1).png",
+      "/assets/images/gallery/med-matrix (2).png",
+      "/assets/images/gallery/med-matrix (3).png",
     ],
     description:
       "A secure clinical document-automation workflow that extracts and normalizes 80+ laboratory biomarkers, populates review templates, and generates provider-reviewed longevity, hormone, nutrition, and supplementation protocol drafts.",
@@ -413,11 +477,11 @@ export const projects: Project[] = [
   {
     title: "Boulder Longevity Institute | AI-Assisted Longevity Assessment & Protocol Generation",
     category: ["ai", "saas", "automation", "industry"],
-    image: "/assets/projects/boulder.webp",
+    image: "/assets/images/projects/boulder.webp",
     gallery: [
-      "/assets/gallery/boulder (1).png",
-      "/assets/gallery/boulder (2).png",
-      "/assets/gallery/boulder (3).png",
+      "/assets/images/gallery/boulder (1).png",
+      "/assets/images/gallery/boulder (2).png",
+      "/assets/images/gallery/boulder (3).png",
     ],
     description:
       "An AI-assisted longevity platform that connects patient intake, laboratory normalization, controlled protocol generation, provider approval, and longitudinal biomarker tracking in one secure clinical workflow.",
@@ -428,11 +492,11 @@ export const projects: Project[] = [
   {
     title: "Creativo AI | Marketing Content and Ad Creation",
     category: ["ai", "saas", "automation"],
-    image: "/assets/projects/creativo-ai.webp",
+    image: "/assets/images/projects/creativo-ai.webp",
     gallery: [
-      "/assets/gallery/creativo-ai (1).png",
-      "/assets/gallery/creativo-ai (2).png",
-      "/assets/gallery/creativo-ai (3).png",
+      "/assets/images/gallery/creativo-ai (1).png",
+      "/assets/images/gallery/creativo-ai (2).png",
+      "/assets/images/gallery/creativo-ai (3).png",
     ],
     description:
       "A generative marketing platform that helps teams develop campaign concepts, create ad assets, and move from brief to publishable content through a structured workflow.",
@@ -443,11 +507,11 @@ export const projects: Project[] = [
   {
     title: "Guess Match Trivia | Mobile Picture Trivia",
     category: ["saas"],
-    image: "/assets/projects/trivia.webp",
+    image: "/assets/images/projects/trivia.webp",
     gallery: [
-      "/assets/gallery/trivia (1).png",
-      "/assets/gallery/trivia (2).png",
-      "/assets/gallery/trivia (3).png",
+      "/assets/images/gallery/trivia (1).png",
+      "/assets/images/gallery/trivia (2).png",
+      "/assets/images/gallery/trivia (3).png",
     ],
     description:
       "A mobile-first trivia experience built around picture-based guessing, progressive challenges, daily rewards, and token-based engagement mechanics.",
@@ -458,11 +522,11 @@ export const projects: Project[] = [
   {
     title: "Valhalla Healthcare | AI-Assisted Clinical Intake",
     category: ["ai", "industry"],
-    image: "/assets/projects/valhalla.webp",
+    image: "/assets/images/projects/valhalla.webp",
     gallery: [
-      "/assets/gallery/valhalla (1).png",
-      "/assets/gallery/valhalla (2).png",
-      "/assets/gallery/valhalla (3).png",
+      "/assets/images/gallery/valhalla (1).png",
+      "/assets/images/gallery/valhalla (2).png",
+      "/assets/images/gallery/valhalla (3).png",
     ],
     description:
       "A healthcare workflow platform that supports patient intake, clinical precharting, structured data capture, and better preparation before the provider encounter.",
@@ -473,11 +537,11 @@ export const projects: Project[] = [
   {
     title: "Uplift AI | Smartphone Biomechanics Analysis",
     category: ["ai", "industry"],
-    image: "/assets/projects/uplift-ai.webp",
+    image: "/assets/images/projects/uplift-ai.webp",
     gallery: [
-      "/assets/gallery/uplift (1).png",
-      "/assets/gallery/uplift (2).png",
-      "/assets/gallery/uplift (3).png",
+      "/assets/images/gallery/uplift (1).png",
+      "/assets/images/gallery/uplift (2).png",
+      "/assets/images/gallery/uplift (3).png",
     ],
     description:
       "A mobile biomechanics platform that uses smartphone video to evaluate movement, quantify athletic performance, and support data-informed coaching decisions.",
@@ -488,11 +552,11 @@ export const projects: Project[] = [
   {
     title: "Xel.Care | CNA Skills Training Lab",
     category: ["ai", "industry"],
-    image: "/assets/projects/xel.care.webp",
+    image: "/assets/images/projects/xel.care.webp",
     gallery: [
-      "/assets/gallery/Xel.Care (1).png",
-      "/assets/gallery/Xel.Care (2).png",
-      "/assets/gallery/Xel.Care (3).png",
+      "/assets/images/gallery/Xel.Care (1).png",
+      "/assets/images/gallery/Xel.Care (2).png",
+      "/assets/images/gallery/Xel.Care (3).png",
     ],
     description:
       "A healthcare training environment that supports CNA skill development through guided practice, structured assessment, and technology-assisted feedback.",
@@ -503,11 +567,11 @@ export const projects: Project[] = [
   {
     title: "GRC Compliance | Governance, Risk, and Evidence Workflows",
     category: ["saas", "automation", "industry"],
-    image: "/assets/projects/grc_compliance.webp",
+    image: "/assets/images/projects/grc_compliance.webp",
     gallery: [
-      "/assets/gallery/grc (1).png",
-      "/assets/gallery/grc (2).png",
-      "/assets/gallery/grc (3).png",
+      "/assets/images/gallery/grc (1).png",
+      "/assets/images/gallery/grc (2).png",
+      "/assets/images/gallery/grc (3).png",
     ],
     description:
       "An AI-assisted compliance concept designed to replace fragmented spreadsheets and paper-based submissions with structured controls, evidence collection, review workflows, and audit-ready reporting.",
@@ -518,11 +582,11 @@ export const projects: Project[] = [
   {
     title: "U Platform | Workforce Coordination and Operations",
     category: ["saas", "automation"],
-    image: "/assets/projects/unisongroup.webp",
+    image: "/assets/images/projects/unisongroup.webp",
     gallery: [
-      "/assets/gallery/unison (1).png",
-      "/assets/gallery/unison (2).png",
-      "/assets/gallery/unison (3).png",
+      "/assets/images/gallery/unison (1).png",
+      "/assets/images/gallery/unison (2).png",
+      "/assets/images/gallery/unison (3).png",
     ],
     description:
       "A workforce coordination platform that brings office, field, and onsite teams into one operating view for tasks, communications, emergency response, goals, and accountability.",
