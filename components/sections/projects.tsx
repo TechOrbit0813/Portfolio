@@ -109,7 +109,7 @@ export function Projects() {
                 <span className="text-brand"> real operating needs.</span>
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
-                A selection of SaaS, AI, automation, healthcare, education, and consumer products. Each reflects a practical balance of user experience, data, integration, and production delivery.
+                A selection of SaaS, AI, automation, engineering, healthcare, education, and consumer products. Each reflects a practical balance of user experience, data, integration, and production delivery.
               </p>
             </div>
 
