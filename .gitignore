@@ -6,5 +6,7 @@
 *.pem
 npm-debug.log*
 .env*
+!/.env.example
 next-env.d.ts
 /CLAUDE.md
+/.chat-api-static-build

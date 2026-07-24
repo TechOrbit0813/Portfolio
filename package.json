@@ -6,7 +6,8 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:static": "node scripts/build-static.mjs"
   },
   "dependencies": {
     "next": "^16.2.7",

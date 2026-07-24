@@ -1,12 +1,13 @@
 import type { NextConfig } from "next";
 
-// Static export so the site can be hosted on GitHub Pages.
-// If deploying to https://<user>.github.io/portfolio/, set BASE_PATH=/portfolio
-// (e.g. in the GitHub Actions build step). For a user/root site, leave it unset.
+// Server mode is the default so the built-in /api/chat route can run on Vercel
+// or another Node.js host. `npm run build:static` enables static export for
+// GitHub Pages and temporarily excludes the server-only API route.
+const isStaticExport = process.env.STATIC_EXPORT === "true";
 const basePath = process.env.BASE_PATH || "";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  ...(isStaticExport ? { output: "export" as const } : {}),
   basePath,
   images: { unoptimized: true },
   trailingSlash: true,
