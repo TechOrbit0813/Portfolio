@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BackgroundCanvas } from "@/components/background-canvas";
+import { ChatWidget } from "@/components/chatbot/chat-widget";
 
 export const metadata: Metadata = {
   title: "Christopher Geyer | Senior Full-Stack AI Engineer",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <ThemeProvider>
           <BackgroundCanvas />
           {children}
+          <ChatWidget />
         </ThemeProvider>
       </body>
     </html>
