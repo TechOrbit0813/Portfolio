@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { navLinks, profile } from "@/lib/data";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -80,11 +79,10 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
+        <div className="flex h-10 w-10 items-center justify-end">
           <button
             aria-label="Toggle navigation menu"
-            className="grid h-10 w-10 place-items-center rounded-full border border-slate-200 text-slate-600 md:hidden dark:border-slate-700 dark:text-slate-300"
+            className="grid h-10 w-10 place-items-center rounded-full border border-slate-700 text-slate-300 md:hidden"
             onClick={() => setOpen((v) => !v)}
           >
             <i className={open ? "fas fa-times" : "fas fa-bars"} />

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Dark mode driven by a `.dark` class on <html> (set by next-themes). */
+/* The site is intentionally rendered in permanent dark mode via `.dark` on <html>. */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
