@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { BackgroundCanvas } from "@/components/background-canvas";
 import { ChatWidget } from "@/components/chatbot/chat-widget";
 
@@ -22,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <head>
         <link
           rel="stylesheet"
@@ -33,12 +32,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#f6f8fc] text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-200">
-        <ThemeProvider>
-          <BackgroundCanvas />
-          {children}
-          <ChatWidget />
-        </ThemeProvider>
+      <body className="bg-slate-950 text-slate-200 antialiased">
+        <BackgroundCanvas />
+        {children}
+        <ChatWidget />
       </body>
     </html>
   );
