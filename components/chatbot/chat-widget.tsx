@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { BASE_PATH } from "@/lib/data";
+import { MarkdownMessage } from "./markdown-message";
 
 type ChatMessage = {
   id: string;
@@ -206,11 +207,15 @@ export function ChatWidget() {
                 <div
                   className={
                     message.role === "user"
-                      ? "max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-brand px-4 py-3 text-sm leading-6 text-white shadow-md shadow-blue-500/15"
-                      : "max-w-[88%] whitespace-pre-wrap rounded-2xl rounded-bl-md border border-slate-200/80 bg-white px-4 py-3 text-sm leading-6 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200"
+                      ? "max-w-[85%] whitespace-pre-wrap break-words rounded-2xl rounded-br-md bg-brand px-4 py-3 text-sm leading-6 text-white shadow-md shadow-blue-500/15"
+                      : "max-w-[88%] overflow-hidden rounded-2xl rounded-bl-md border border-slate-700 bg-slate-800 px-4 py-3 text-sm text-slate-200 shadow-sm"
                   }
                 >
-                  {message.content}
+                  {message.role === "assistant" ? (
+                    <MarkdownMessage content={message.content} />
+                  ) : (
+                    message.content
+                  )}
                 </div>
               </div>
             ))}
