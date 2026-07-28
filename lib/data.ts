@@ -16,7 +16,7 @@ export const profile = {
   github: "https://github.com/chrisgeyer1215",
   linkedin: "#",
   resume: "https://drive.google.com/file/d/1PMfL9pVfule9d7QULvhq2L5rwcTntyMH/",
-  photo: "/assets/images/profile.png",
+  photo: "/assets/optimized/profile/profile-364.7ef96494dc.webp",
   tagline:
     "I help teams design, build, and improve production software across full-stack applications, AI workflows, cloud infrastructure, and operational automation.",
 };
@@ -129,21 +129,20 @@ export const about = {
   ],
 };
 
-// Each skill has a name, an optional Simple Icons slug (https://simpleicons.org)
-// used to load the official logo, and a Font Awesome class used as a fallback.
-export type Skill = { name: string; slug?: string; iconUrl?: string; fa: string };
+// Skill icons use the locally bundled SVG icon subset.
+export type Skill = { name: string; fa: string };
 
 export const skills: { icon: string; title: string; items: Skill[] }[] = [
   {
     icon: "fas fa-laptop-code",
     title: "Product Frontend",
     items: [
-      { name: "React", slug: "react", fa: "fab fa-react" },
-      { name: "Next.js", slug: "nextdotjs", fa: "fas fa-layer-group" },
-      { name: "TypeScript", slug: "typescript", fa: "fas fa-code" },
-      { name: "JavaScript", slug: "javascript", fa: "fab fa-js" },
-      { name: "Tailwind CSS", slug: "tailwindcss", fa: "fas fa-wind" },
-      { name: "Angular", slug: "angular", fa: "fab fa-angular" },
+      { name: "React", fa: "fab fa-react" },
+      { name: "Next.js", fa: "fas fa-layer-group" },
+      { name: "TypeScript", fa: "fas fa-code" },
+      { name: "JavaScript", fa: "fab fa-js" },
+      { name: "Tailwind CSS", fa: "fas fa-wind" },
+      { name: "Angular", fa: "fab fa-angular" },
     ],
   },
   {
@@ -152,19 +151,17 @@ export const skills: { icon: string; title: string; items: Skill[] }[] = [
     items: [
       {
         name: "Python",
-        iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
         fa: "fab fa-python",
       },
       {
         name: "Node.js",
-        iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
         fa: "fab fa-node-js",
       },
-      { name: "FastAPI", slug: "fastapi", fa: "fas fa-bolt" },
-      { name: "Django", slug: "django", fa: "fas fa-leaf" },
-      { name: "C# / .NET", slug: "dotnet", fa: "fas fa-code" },
-      { name: "Go", slug: "go", fa: "fas fa-code" },
-      { name: "C++", slug: "cplusplus", fa: "fas fa-code" },
+      { name: "FastAPI", fa: "fas fa-bolt" },
+      { name: "Django", fa: "fas fa-leaf" },
+      { name: "C# / .NET", fa: "fas fa-code" },
+      { name: "Go", fa: "fas fa-code" },
+      { name: "C++", fa: "fas fa-code" },
       { name: "REST APIs", fa: "fas fa-network-wired" },
     ],
   },
@@ -172,9 +169,9 @@ export const skills: { icon: string; title: string; items: Skill[] }[] = [
     icon: "fas fa-brain",
     title: "AI and LLM Systems",
     items: [
-      { name: "OpenAI", slug: "openai", fa: "fas fa-brain" },
-      { name: "Claude", slug: "claude", fa: "fas fa-robot" },
-      { name: "LangChain", slug: "langchain", fa: "fas fa-link" },
+      { name: "OpenAI", fa: "fas fa-brain" },
+      { name: "Claude", fa: "fas fa-robot" },
+      { name: "LangChain", fa: "fas fa-link" },
       { name: "RAG", fa: "fas fa-magnifying-glass" },
       { name: "AI Agents", fa: "fas fa-diagram-project" },
       { name: "Tool Calling", fa: "fas fa-gears" },
@@ -186,35 +183,35 @@ export const skills: { icon: string; title: string; items: Skill[] }[] = [
     icon: "fas fa-database",
     title: "Data and Integrations",
     items: [
-      { name: "PostgreSQL", slug: "postgresql", fa: "fas fa-database" },
-      { name: "Supabase", slug: "supabase", fa: "fas fa-bolt" },
+      { name: "PostgreSQL", fa: "fas fa-database" },
+      { name: "Supabase", fa: "fas fa-bolt" },
       { name: "SQL", fa: "fas fa-database" },
-      { name: "Drizzle ORM", slug: "drizzle", fa: "fas fa-layer-group" },
+      { name: "Drizzle ORM", fa: "fas fa-layer-group" },
       { name: "pgvector", fa: "fas fa-vector-square" },
-      { name: "Redis", slug: "redis", fa: "fas fa-database" },
+      { name: "Redis", fa: "fas fa-database" },
       { name: "API Integration", fa: "fas fa-plug" },
-      { name: "Stripe", slug: "stripe", fa: "fab fa-stripe" },
+      { name: "Stripe", fa: "fab fa-stripe" },
     ],
   },
   {
     icon: "fas fa-cloud",
     title: "Cloud and Platform",
     items: [
-      { name: "AWS", slug: "amazonwebservices", fa: "fab fa-aws" },
-      { name: "Microsoft Azure", slug: "microsoftazure", fa: "fab fa-microsoft" },
-      { name: "Linux", slug: "linux", fa: "fab fa-linux" },
-      { name: "Docker", slug: "docker", fa: "fab fa-docker" },
-      { name: "Kubernetes", slug: "kubernetes", fa: "fas fa-dharmachakra" },
-      { name: "Terraform", slug: "terraform", fa: "fas fa-cubes" },
+      { name: "AWS", fa: "fab fa-aws" },
+      { name: "Microsoft Azure", fa: "fab fa-microsoft" },
+      { name: "Linux", fa: "fab fa-linux" },
+      { name: "Docker", fa: "fab fa-docker" },
+      { name: "Kubernetes", fa: "fas fa-dharmachakra" },
+      { name: "Terraform", fa: "fas fa-cubes" },
       { name: "CI/CD", fa: "fas fa-code-branch" },
-      { name: "GitHub Actions", slug: "githubactions", fa: "fab fa-github" },
+      { name: "GitHub Actions", fa: "fab fa-github" },
     ],
   },
   {
     icon: "fas fa-shield-halved",
     title: "Operations and Security",
     items: [
-      { name: "Zabbix", slug: "zabbix", fa: "fas fa-chart-line" },
+      { name: "Zabbix", fa: "fas fa-chart-line" },
       { name: "Monitoring", fa: "fas fa-desktop" },
       { name: "Observability", fa: "fas fa-binoculars" },
       { name: "System Hardening", fa: "fas fa-shield-halved" },
@@ -291,23 +288,23 @@ export type CertificationBadge = {
 
 export const certificationBadges: CertificationBadge[] = [
   {
-    image: "/assets/images/certifications/badge_1_transparent_512.png",
+    image: "/assets/optimized/badges/badge_1_transparent_512.1620585688.webp",
     alt: "PCEP Certified Entry-Level Python Programmer badge",
   },
   {
-    image: "/assets/images/certifications/badge_2_transparent_512.png",
+    image: "/assets/optimized/badges/badge_2_transparent_512.33fe465fe1.webp",
     alt: "OpenEDG JS Institute Certified Associate Web Developer badge",
   },
   {
-    image: "/assets/images/certifications/badge_3_transparent_512.png",
+    image: "/assets/optimized/badges/badge_3_transparent_512.82be73dea1.webp",
     alt: "AWS Generative AI Developer Professional badge",
   },
   {
-    image: "/assets/images/certifications/badge_6_transparent_512.png",
+    image: "/assets/optimized/badges/badge_6_transparent_512.8b075665ed.webp",
     alt: "Everlaw Certified Project Manager badge",
   },
   {
-    image: "/assets/images/certifications/badge_7_transparent_512.png",
+    image: "/assets/optimized/badges/badge_7_transparent_512.d65ef6939c.webp",
     alt: "GitHub Agentic AI Developer certification badge",
   },
 ];
@@ -322,55 +319,55 @@ export type AdditionalCertificate = {
 export const additionalCertificates: AdditionalCertificate[] = [
   {
     title: "Python",
-    image: "/assets/images/certificates/python_basic%20certificate.webp",
+    image: "/assets/optimized/certificates/python_basic-certificate.862c263f3b.webp",
     alt: "HackerRank Python Basic certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/a671879b6c49",
   },
   {
     title: "Go",
-    image: "/assets/images/certificates/golang_intermediate%20certificate.webp",
+    image: "/assets/optimized/certificates/golang_intermediate-certificate.317649b5bc.webp",
     alt: "HackerRank Go Intermediate certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/ca693d4fa588",
   },
   {
     title: "C#",
-    image: "/assets/images/certificates/c_sharp_basic%20certificate.webp",
+    image: "/assets/optimized/certificates/c_sharp_basic-certificate.49cb0d8f8d.webp",
     alt: "HackerRank C# Basic certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/970365848f94",
   },
   {
     title: "React",
-    image: "/assets/images/certificates/react_basic%20certificate.webp",
+    image: "/assets/optimized/certificates/react_basic-certificate.49cb0d8f8d.webp",
     alt: "HackerRank React Basic certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/65ba3280192d",
   },
   {
     title: "JavaScript",
-    image: "/assets/images/certificates/javascript_intermediate%20certificate.webp",
+    image: "/assets/optimized/certificates/javascript_intermediate-certificate.4bc0f9c062.webp",
     alt: "HackerRank JavaScript Intermediate certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/931df84abdf1",
   },
   {
     title: "SQL (Advanced)",
-    image: "/assets/images/certificates/sql_advanced%20certificate.webp",
+    image: "/assets/optimized/certificates/sql_advanced-certificate.317649b5bc.webp",
     alt: "HackerRank SQL Advanced certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/b4ce03443763",
   },
   {
     title: "Frontend Developer",
-    image: "/assets/images/certificates/frontend_developer_react%20certificate.webp",
+    image: "/assets/optimized/certificates/frontend_developer_react-certificate.acf569609e.webp",
     alt: "HackerRank Frontend Developer React certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/efa1bdb505b7",
   },
   {
     title: "REST API",
-    image: "/assets/images/certificates/rest_api_intermediate%20certificate.webp",
+    image: "/assets/optimized/certificates/rest_api_intermediate-certificate.a4341a3559.webp",
     alt: "HackerRank REST API Intermediate certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/33d9a4e62ac2",
   },
   {
     title: "Software Engineer",
-    image: "/assets/images/certificates/software_engineer%20certificate.webp",
+    image: "/assets/optimized/certificates/software_engineer-certificate.6e8456a0a4.webp",
     alt: "HackerRank Software Engineer certificate earned by Chris Geyer",
     href: "https://www.hackerrank.com/certificates/iframe/c0a52353d35f",
   },
@@ -404,9 +401,9 @@ export const projects: Project[] = [
     category: ["ai", "saas"],
     image: "/assets/images/projects/moonshot-ai.webp",
     gallery: [
-      "/assets/images/gallery/moonshot (1).png",
-      "/assets/images/gallery/moonshot (2).png",
-      "/assets/images/gallery/moonshot (3).png",
+      "/assets/optimized/gallery/moonshot-1.d6e22af7ef.webp",
+      "/assets/optimized/gallery/moonshot-2.8ce887512d.webp",
+      "/assets/optimized/gallery/moonshot-3.0afe2de158.webp",
     ],
     description:
       "An AI-enabled optimization platform for evaluating ecommerce experiences, identifying conversion opportunities, and turning performance signals into focused storefront experiments.",
@@ -419,9 +416,9 @@ export const projects: Project[] = [
     category: ["saas", "automation", "industry"],
     image: "/assets/images/projects/jfe-3d-collaboration.webp",
     gallery: [
-      "/assets/images/gallery/jfe-3d-collaboration-introduction.webp",
-      "/assets/images/gallery/jfe-3d-collaboration-workflow.webp",
-      "/assets/images/gallery/jfe-3d-collaboration-case-study.webp",
+      "/assets/optimized/gallery/jfe-3d-collaboration-introduction.f85453a6c5.webp",
+      "/assets/optimized/gallery/jfe-3d-collaboration-workflow.e3e2c507f8.webp",
+      "/assets/optimized/gallery/jfe-3d-collaboration-case-study.4e39caeb0c.webp",
     ],
     description:
       "A secure browser-based engineering collaboration environment that connects Box storage with Autodesk authentication, Model Derivative API, and Viewer SDK so teams can translate, inspect, mark up, and review more than 70 model formats without dedicated workstations.",
@@ -441,9 +438,9 @@ export const projects: Project[] = [
     category: ["automation", "industry"],
     image: "/assets/images/projects/ads-stormtech-design-tool.webp",
     gallery: [
-      "/assets/images/gallery/ads-stormtech-introduction.webp",
-      "/assets/images/gallery/ads-stormtech-workflow.webp",
-      "/assets/images/gallery/ads-stormtech-case-study.webp",
+      "/assets/optimized/gallery/ads-stormtech-introduction.dc26c9402f.webp",
+      "/assets/optimized/gallery/ads-stormtech-workflow.3dd4d429e3.webp",
+      "/assets/optimized/gallery/ads-stormtech-case-study.3c89a2d91e.webp",
     ],
     description:
       "A browser-based stormwater design tool that turns validated civil-engineering inputs into Autodesk Inventor models, layouts, dimensional drawings, bills of materials, and downloadable engineering packages through scalable cloud jobs.",
@@ -463,9 +460,9 @@ export const projects: Project[] = [
     category: ["ai", "industry"],
     image: "/assets/images/projects/sportsbox-ai.webp",
     gallery: [
-      "/assets/images/gallery/sportsbox (1).png",
-      "/assets/images/gallery/sportsbox (2).png",
-      "/assets/images/gallery/sportsbox (3).png",
+      "/assets/optimized/gallery/sportsbox-1.7ade2be9f0.webp",
+      "/assets/optimized/gallery/sportsbox-2.9e51dd16d7.webp",
+      "/assets/optimized/gallery/sportsbox-3.a7e0067d19.webp",
     ],
     description:
       "A motion-analysis and coaching platform that converts golf swings into 3D performance data, visual feedback, and actionable insights for athletes and coaches.",
@@ -478,9 +475,9 @@ export const projects: Project[] = [
     category: ["ai", "industry"],
     image: "/assets/images/projects/boddlelearning.webp",
     gallery: [
-      "/assets/images/gallery/boddlelearning (1).png",
-      "/assets/images/gallery/boddlelearning (2).png",
-      "/assets/images/gallery/boddlelearning (3).png",
+      "/assets/optimized/gallery/boddlelearning-1.3695bceb30.webp",
+      "/assets/optimized/gallery/boddlelearning-2.f1713e119f.webp",
+      "/assets/optimized/gallery/boddlelearning-3.37b4df0816.webp",
     ],
     description:
       "A game-based learning platform that adapts math practice to each student, gives educators useful progress data, and keeps younger learners engaged through guided play.",
@@ -493,9 +490,9 @@ export const projects: Project[] = [
     category: ["saas", "industry"],
     image: "/assets/images/projects/groove.webp",
     gallery: [
-      "/assets/images/gallery/groove (1).png",
-      "/assets/images/gallery/groove (2).png",
-      "/assets/images/gallery/groove (3).png",
+      "/assets/optimized/gallery/groove-1.f75764b162.webp",
+      "/assets/optimized/gallery/groove-2.0527b8fb99.webp",
+      "/assets/optimized/gallery/groove-3.6017d7603f.webp",
     ],
     description:
       "A financial wellness product that combines goal planning, educational content, cash-flow visibility, guided activities, rewards, and an AI-supported user experience.",
@@ -508,9 +505,9 @@ export const projects: Project[] = [
     category: ["ai", "saas", "automation", "industry"],
     image: "/assets/images/projects/boulder.webp",
     gallery: [
-      "/assets/images/gallery/boulder (1).png",
-      "/assets/images/gallery/boulder (2).png",
-      "/assets/images/gallery/boulder (3).png",
+      "/assets/optimized/gallery/boulder-1.f351142748.webp",
+      "/assets/optimized/gallery/boulder-2.d4811347b2.webp",
+      "/assets/optimized/gallery/boulder-3.8a4b2f9bd8.webp",
     ],
     description:
       "An AI-assisted longevity platform that connects patient intake, laboratory normalization, controlled protocol generation, provider approval, and longitudinal biomarker tracking in one secure clinical workflow.",
@@ -523,9 +520,9 @@ export const projects: Project[] = [
     category: ["ai", "saas", "automation"],
     image: "/assets/images/projects/creativo-ai.webp",
     gallery: [
-      "/assets/images/gallery/creativo-ai (1).png",
-      "/assets/images/gallery/creativo-ai (2).png",
-      "/assets/images/gallery/creativo-ai (3).png",
+      "/assets/optimized/gallery/creativo-ai-1.c3a609ebdd.webp",
+      "/assets/optimized/gallery/creativo-ai-2.9768ef76dc.webp",
+      "/assets/optimized/gallery/creativo-ai-3.0f67be35e6.webp",
     ],
     description:
       "A generative marketing platform that helps teams develop campaign concepts, create ad assets, and move from brief to publishable content through a structured workflow.",
@@ -538,9 +535,9 @@ export const projects: Project[] = [
     category: ["saas"],
     image: "/assets/images/projects/trivia.webp",
     gallery: [
-      "/assets/images/gallery/trivia (1).png",
-      "/assets/images/gallery/trivia (2).png",
-      "/assets/images/gallery/trivia (3).png",
+      "/assets/optimized/gallery/trivia-1.90685c02ac.webp",
+      "/assets/optimized/gallery/trivia-2.7d36c01bc6.webp",
+      "/assets/optimized/gallery/trivia-3.c734dc68cd.webp",
     ],
     description:
       "A mobile-first trivia experience built around picture-based guessing, progressive challenges, daily rewards, and token-based engagement mechanics.",
@@ -553,9 +550,9 @@ export const projects: Project[] = [
     category: ["ai", "industry"],
     image: "/assets/images/projects/valhalla.webp",
     gallery: [
-      "/assets/images/gallery/valhalla (1).png",
-      "/assets/images/gallery/valhalla (2).png",
-      "/assets/images/gallery/valhalla (3).png",
+      "/assets/optimized/gallery/valhalla-1.5a232b1d36.webp",
+      "/assets/optimized/gallery/valhalla-2.fb54e89a1c.webp",
+      "/assets/optimized/gallery/valhalla-3.18a5803753.webp",
     ],
     description:
       "A healthcare workflow platform that supports patient intake, clinical precharting, structured data capture, and better preparation before the provider encounter.",
@@ -568,9 +565,9 @@ export const projects: Project[] = [
     category: ["ai", "industry"],
     image: "/assets/images/projects/uplift-ai.webp",
     gallery: [
-      "/assets/images/gallery/uplift (1).png",
-      "/assets/images/gallery/uplift (2).png",
-      "/assets/images/gallery/uplift (3).png",
+      "/assets/optimized/gallery/uplift-1.b1d4e0d8ff.webp",
+      "/assets/optimized/gallery/uplift-2.3e239f13d1.webp",
+      "/assets/optimized/gallery/uplift-3.674964ea87.webp",
     ],
     description:
       "A mobile biomechanics platform that uses smartphone video to evaluate movement, quantify athletic performance, and support data-informed coaching decisions.",
@@ -583,9 +580,9 @@ export const projects: Project[] = [
     category: ["ai", "industry"],
     image: "/assets/images/projects/xel.care.webp",
     gallery: [
-      "/assets/images/gallery/Xel.Care (1).png",
-      "/assets/images/gallery/Xel.Care (2).png",
-      "/assets/images/gallery/Xel.Care (3).png",
+      "/assets/optimized/gallery/xel.care-1.4de048287f.webp",
+      "/assets/optimized/gallery/xel.care-2.07b557ce0a.webp",
+      "/assets/optimized/gallery/xel.care-3.f8bcc82c98.webp",
     ],
     description:
       "A healthcare training environment that supports CNA skill development through guided practice, structured assessment, and technology-assisted feedback.",
@@ -598,9 +595,9 @@ export const projects: Project[] = [
     category: ["automation", "industry"],
     image: "/assets/images/projects/frenger-bim-configurator.webp",
     gallery: [
-      "/assets/images/gallery/frenger-bim-introduction.webp",
-      "/assets/images/gallery/frenger-bim-workflow.webp",
-      "/assets/images/gallery/frenger-bim-case-study.webp",
+      "/assets/optimized/gallery/frenger-bim-introduction.014e228e6c.webp",
+      "/assets/optimized/gallery/frenger-bim-workflow.010f51965c.webp",
+      "/assets/optimized/gallery/frenger-bim-case-study.c6f7af525d.webp",
     ],
     description:
       "A browser-based BIM configurator that validates custom heating and cooling ceiling requirements, runs versioned Autodesk Revit Automation jobs, and returns ready-to-use RFA or RVT content on demand.",
@@ -620,9 +617,9 @@ export const projects: Project[] = [
     category: ["ai", "automation", "industry"],
     image: "/assets/images/projects/med-matrix.webp",
     gallery: [
-      "/assets/images/gallery/med-matrix (1).png",
-      "/assets/images/gallery/med-matrix (2).png",
-      "/assets/images/gallery/med-matrix (3).png",
+      "/assets/optimized/gallery/med-matrix-1.65bf919bd7.webp",
+      "/assets/optimized/gallery/med-matrix-2.2e64dcb65a.webp",
+      "/assets/optimized/gallery/med-matrix-3.f47e2f739a.webp",
     ],
     description:
       "A secure clinical document-automation workflow that extracts and normalizes 80+ laboratory biomarkers, populates review templates, and generates provider-reviewed longevity, hormone, nutrition, and supplementation protocol drafts.",
@@ -635,9 +632,9 @@ export const projects: Project[] = [
     category: ["saas", "automation", "industry"],
     image: "/assets/images/projects/grc_compliance.webp",
     gallery: [
-      "/assets/images/gallery/grc (1).png",
-      "/assets/images/gallery/grc (2).png",
-      "/assets/images/gallery/grc (3).png",
+      "/assets/optimized/gallery/grc-1.18d62bc77d.webp",
+      "/assets/optimized/gallery/grc-2.d1ded2db54.webp",
+      "/assets/optimized/gallery/grc-3.af2c148570.webp",
     ],
     description:
       "An AI-assisted compliance concept designed to replace fragmented spreadsheets and paper-based submissions with structured controls, evidence collection, review workflows, and audit-ready reporting.",
@@ -650,9 +647,9 @@ export const projects: Project[] = [
     category: ["saas", "automation"],
     image: "/assets/images/projects/unisongroup.webp",
     gallery: [
-      "/assets/images/gallery/unison (1).png",
-      "/assets/images/gallery/unison (2).png",
-      "/assets/images/gallery/unison (3).png",
+      "/assets/optimized/gallery/unison-1.82d22a53ee.webp",
+      "/assets/optimized/gallery/unison-2.c4292a7beb.webp",
+      "/assets/optimized/gallery/unison-3.b36b2217e4.webp",
     ],
     description:
       "A workforce coordination platform that brings office, field, and onsite teams into one operating view for tasks, communications, emergency response, goals, and accountability.",

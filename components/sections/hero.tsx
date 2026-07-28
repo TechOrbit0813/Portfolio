@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { asset, hero, profile } from "@/lib/data";
+import { ProfileImage } from "@/components/profile-image";
 
 const capabilityTone: Record<string, string> = {
   blue: "bg-blue-500/10 text-blue-500 ring-blue-500/20 dark:bg-blue-500/15 dark:text-blue-400",
@@ -28,7 +28,7 @@ export function Hero() {
 
       <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl flex-col justify-center px-6 pb-10 pt-10 lg:px-8 lg:pb-12 lg:pt-12">
         <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] xl:gap-16">
-          
+
           <div className="relative mx-auto w-full max-w-[620px] lg:mx-0 lg:justify-self-end">
             <div className="absolute -inset-4 -z-10 rounded-[2.25rem] bg-gradient-to-br from-blue-500/20 via-brand/5 to-violet-500/20 blur-2xl" />
 
@@ -40,10 +40,10 @@ export function Hero() {
                 <div className="relative h-72 w-72 rounded-full p-1.5 sm:h-[370px] sm:w-[370px]">
                   <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_35deg,var(--color-brand),var(--color-accent),#8b5cf6,var(--color-brand))] opacity-90 transition duration-700 group-hover:rotate-45" />
                   <span className="absolute inset-[7px] rounded-full bg-white dark:bg-slate-950" />
-                  <img
-                    src={asset(profile.photo)}
+                  <ProfileImage
                     alt={`${profile.name}, ${profile.title}`}
-                    suppressHydrationWarning
+                    sizes="(min-width: 640px) 370px, 288px"
+                    priority
                     className="relative h-full w-full rounded-full object-cover object-center shadow-2xl transition duration-500 group-hover:scale-[1.025]"
                   />
                 </div>

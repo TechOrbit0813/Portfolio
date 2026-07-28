@@ -10,3 +10,4 @@ npm-debug.log*
 next-env.d.ts
 /CLAUDE.md
 /.chat-api-static-build
+*.patch

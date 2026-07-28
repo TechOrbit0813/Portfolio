@@ -1,10 +1,10 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-import { useEffect, useMemo, useState } from "react";
-import { asset, projects, projectFilters } from "@/lib/data";
+import { lazy, Suspense, useMemo, useState } from "react";
+import { projects, projectFilters } from "@/lib/data";
 import type { Project, ProjectCategory } from "@/lib/data";
 import { Reveal } from "@/components/reveal";
+import { ProjectImage } from "@/components/projects/project-image";
 
 const categoryIcons: Record<ProjectCategory, string> = {
   ai: "fas fa-brain",
@@ -22,15 +22,15 @@ const categoryLabels = Object.fromEntries(
 type GalleryState = {
   title: string;
   images: string[];
-  activeIndex: number;
 };
+
+const ProjectGallery = lazy(() => import("@/components/projects/project-gallery"));
+const visibleProjectsList = projects.filter((project) => !project.hidden);
 
 export function Projects() {
   const [gallery, setGallery] = useState<GalleryState | null>(null);
   const [filter, setFilter] = useState<"all" | ProjectCategory>("all");
   const [expanded, setExpanded] = useState(false);
-
-  const visibleProjectsList = projects.filter((project) => !project.hidden);
 
   const filteredProjects = useMemo(
     () =>
@@ -39,7 +39,7 @@ export function Projects() {
         : visibleProjectsList.filter((project) =>
             project.category.includes(filter)
           ),
-    [filter, visibleProjectsList]
+    [filter]
   );
 
   const INITIAL_LIMIT = filter === "all" ? 5 : 4;
@@ -57,42 +57,8 @@ export function Projects() {
     setGallery({
       title: project.title,
       images: project.gallery,
-      activeIndex: 0,
     });
   };
-
-  const moveGallery = (direction: -1 | 1) => {
-    setGallery((current) => {
-      if (!current || current.images.length < 2) return current;
-
-      return {
-        ...current,
-        activeIndex:
-          (current.activeIndex + direction + current.images.length) %
-          current.images.length,
-      };
-    });
-  };
-
-  useEffect(() => {
-    if (!gallery) return;
-
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setGallery(null);
-      if (event.key === "ArrowLeft") moveGallery(-1);
-      if (event.key === "ArrowRight") moveGallery(1);
-    };
-
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [gallery]);
-
-  const activeGalleryImage = gallery?.images[gallery.activeIndex];
 
   return (
     <section id="projects" className="relative py-[26px]">
@@ -283,10 +249,10 @@ export function Projects() {
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
                     <span className="ml-3 h-4 flex-1 rounded-full bg-white/8" />
                   </div>
-                  <img
-                    src={asset(featuredProject.image)}
+                  <ProjectImage
+                    image={featuredProject.image}
                     alt={featuredProject.title}
-                    suppressHydrationWarning
+                    sizes="(min-width: 1024px) 56vw, 100vw"
                     className={`h-full min-h-[20rem] w-full object-cover object-top pt-10 transition duration-700 lg:min-h-[36rem] ${
                       featuredProject.gallery?.length
                         ? "group-hover:scale-[1.025]"
@@ -330,10 +296,10 @@ export function Projects() {
                         hasGallery ? "cursor-pointer" : "cursor-default"
                       }`}
                     >
-                      <img
-                        src={asset(project.image)}
+                      <ProjectImage
+                        image={project.image}
                         alt={project.title}
-                        suppressHydrationWarning
+                        sizes="(min-width: 768px) 50vw, 100vw"
                         className={`h-full w-full object-cover object-top transition duration-700 ${
                           hasGallery ? "group-hover:scale-105" : ""
                         }`}
@@ -438,70 +404,16 @@ export function Projects() {
         )}
       </div>
 
-      {gallery && activeGalleryImage && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${gallery.title} project gallery`}
-          onClick={() => setGallery(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/94 p-1 backdrop-blur-xl sm:p-2 lg:p-3"
-        >
-          <div
-            onClick={(event) => event.stopPropagation()}
-            className="relative flex h-[98dvh] w-[98vw] max-w-none items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-slate-950 shadow-[0_30px_120px_rgba(0,0,0,0.65)] sm:rounded-3xl"
-          >
-            <div className="relative flex h-full min-h-0 w-full items-center justify-center overflow-hidden bg-black/35 p-1 sm:p-2 lg:p-3">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12),transparent_55%)]" />
-              <img
-                key={activeGalleryImage}
-                src={asset(activeGalleryImage)}
-                alt={`${gallery.title} gallery image ${gallery.activeIndex + 1}`}
-                className="relative z-10 h-full w-full max-w-none rounded-lg object-contain shadow-2xl sm:rounded-xl"
-              />
-
-              <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-1 rounded-full border border-white/15 bg-slate-950/78 p-1.5 text-white shadow-[0_16px_45px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:bottom-6">
-                {gallery.images.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => moveGallery(-1)}
-                    aria-label="View previous gallery image"
-                    className="grid h-9 w-9 place-items-center rounded-full transition hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-                  >
-                    <i className="fas fa-chevron-left text-xs" />
-                  </button>
-                )}
-
-                <span className="min-w-[4.25rem] px-2 text-center text-xs font-semibold tabular-nums text-slate-100">
-                  {gallery.activeIndex + 1} / {gallery.images.length}
-                </span>
-
-                {gallery.images.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => moveGallery(1)}
-                    aria-label="View next gallery image"
-                    className="grid h-9 w-9 place-items-center rounded-full transition hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-                  >
-                    <i className="fas fa-chevron-right text-xs" />
-                  </button>
-                )}
-
-                <span className="mx-1 h-5 w-px bg-white/15" aria-hidden="true" />
-
-                <button
-                  type="button"
-                  onClick={() => setGallery(null)}
-                  aria-label="Close project gallery"
-                  className="grid h-9 w-9 place-items-center rounded-full transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-                >
-                  <i className="fas fa-times text-sm" />
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      )}
+      {gallery ? (
+        <Suspense fallback={null}>
+          <ProjectGallery
+            key={gallery.title}
+            title={gallery.title}
+            images={gallery.images}
+            onClose={() => setGallery(null)}
+          />
+        </Suspense>
+      ) : null}
     </section>
   );
 }

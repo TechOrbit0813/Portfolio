@@ -1,3 +1,4 @@
+@import "./fontawesome-subset.css";
 @import "tailwindcss";
 
 /* The site is intentionally rendered in permanent dark mode via `.dark` on <html>. */
@@ -17,6 +18,33 @@ html {
 
 body {
   font-family: var(--font-sans);
+}
+
+
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 700ms ease-out var(--reveal-delay, 0ms),
+    transform 700ms ease-out var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal[data-reveal-direction="up"] {
+  transform: translateY(2rem);
+}
+
+.reveal[data-reveal-direction="left"] {
+  transform: translateX(-2rem);
+}
+
+.reveal[data-reveal-direction="right"] {
+  transform: translateX(2rem);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
 }
 
 
@@ -184,3 +212,11 @@ body {
   mask-image: linear-gradient(to bottom, black, transparent 92%);
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

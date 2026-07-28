@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-import { about, asset, profile } from "@/lib/data";
+import { about, profile } from "@/lib/data";
+import { ProfileImage } from "@/components/profile-image";
 
 const stats = [
   {
@@ -165,9 +165,9 @@ export function About() {
             <div className="h-auto overflow-hidden rounded-[17px] border border-slate-200/90 bg-gradient-to-br from-white/95 to-slate-50/90 shadow-[0_18px_50px_rgba(15,23,42,0.08)] dark:border-[#1b2d49] dark:bg-none dark:bg-[#030b19]/90 dark:shadow-[0_18px_50px_rgba(0,0,0,0.14)] xl:h-[385px]">
               <div className="flex min-h-[220px] flex-col items-center gap-5 p-4 sm:flex-row sm:items-start sm:gap-8 sm:px-7 sm:py-[15px] xl:h-[220px]">
                 <div className="relative h-[190px] w-[190px] shrink-0 rounded-full border-[3px] border-blue-500 bg-white p-[2px] shadow-[0_0_25px_rgba(37,99,235,0.2)]">
-                  <img
-                    src={asset(profile.photo)}
+                  <ProfileImage
                     alt={`${profile.name}, ${profile.title}`}
+                    sizes="190px"
                     className="h-full w-full rounded-full object-cover object-center"
                   />
                   <span className="absolute bottom-[5px] right-[9px] h-[28px] w-[28px] rounded-full border-[4px] border-white bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.42)] dark:border-[#030b19]" />
