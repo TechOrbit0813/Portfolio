@@ -22,28 +22,48 @@ export function Header() {
   };
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
+    const sentinel = document.getElementById("page-top-sentinel");
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter((section): section is HTMLElement => section instanceof HTMLElement);
 
-      if (activeLockRef.current !== null) {
-        return;
-      }
+    const topObserver = new IntersectionObserver(
+      ([entry]) => setScrolled(!entry.isIntersecting),
+      { rootMargin: "20px 0px 0px 0px", threshold: 0 }
+    );
 
-      // scroll-spy: find the section nearest the top
-      const offset = window.scrollY + 120;
-      let current = "#home";
-      for (const link of navLinks) {
-        const el = document.querySelector(link.href);
-        if (el instanceof HTMLElement && el.offsetTop <= offset) {
-          current = link.href;
+    if (sentinel) {
+      topObserver.observe(sentinel);
+    }
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        if (activeLockRef.current !== null) return;
+
+        const nearest = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => {
+            const aDistance = Math.abs(a.boundingClientRect.top - 120);
+            const bDistance = Math.abs(b.boundingClientRect.top - 120);
+            return aDistance - bDistance;
+          })[0];
+
+        if (nearest instanceof IntersectionObserverEntry) {
+          setActive(`#${nearest.target.id}`);
         }
+      },
+      {
+        rootMargin: "-18% 0px -70% 0px",
+        threshold: [0, 0.01, 0.25],
       }
-      setActive(current);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    );
+
+    sections.forEach((section) => sectionObserver.observe(section));
+
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      topObserver.disconnect();
+      sectionObserver.disconnect();
+
       if (activeLockRef.current !== null) {
         window.clearTimeout(activeLockRef.current);
       }
@@ -71,7 +91,9 @@ export function Header() {
               aria-current={active === link.href ? "page" : undefined}
               onClick={() => handleNavClick(link.href)}
               className={`text-sm font-medium transition hover:text-brand ${
-                active === link.href ? "text-brand" : "text-slate-600 dark:text-slate-300"
+                active === link.href
+                  ? "text-brand"
+                  : "text-slate-600 dark:text-slate-300"
               }`}
             >
               {link.label}
@@ -82,8 +104,9 @@ export function Header() {
         <div className="flex h-10 w-10 items-center justify-end">
           <button
             aria-label="Toggle navigation menu"
+            aria-expanded={open}
             className="grid h-10 w-10 place-items-center rounded-full border border-slate-700 text-slate-300 md:hidden"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpen((value) => !value)}
           >
             <i className={open ? "fas fa-times" : "fas fa-bars"} />
           </button>

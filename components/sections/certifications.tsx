@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { additionalCertificates, certificationBadges, asset } from "@/lib/data";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal } from "@/components/reveal";
@@ -29,9 +28,11 @@ export function Certifications() {
                 <img
                   src={asset(badge.image)}
                   alt={i < certificationBadges.length ? badge.alt : ""}
-                  suppressHydrationWarning
+                  width={512}
+                  height={512}
                   className="h-36 w-36 object-contain transition-transform duration-300 hover:scale-110"
                   loading="lazy"
+                  decoding="async"
                   aria-hidden={i >= certificationBadges.length}
                 />
               </li>
@@ -63,9 +64,11 @@ export function Certifications() {
                     <img
                       src={asset(certificate.image)}
                       alt={certificate.alt}
-                      suppressHydrationWarning
+                      width={3308}
+                      height={2520}
                       className="aspect-[3308/2520] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="flex items-center justify-between gap-4 px-4 py-3">
                       <span className="font-semibold text-slate-900 dark:text-white">

@@ -6,9 +6,16 @@ export function ScrollToTop() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 400);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const sentinel = document.getElementById("page-top-sentinel");
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setShow(!entry.isIntersecting),
+      { rootMargin: "400px 0px 0px 0px", threshold: 0 }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   if (!show) return null;

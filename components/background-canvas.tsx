@@ -50,7 +50,10 @@ export function BackgroundCanvas() {
     let dpr = 1;
     let raf = 0;
     let lastFrame = performance.now();
+    let lastRenderedAt = 0;
+    let pageVisible = !document.hidden;
     let elapsed = 0;
+    const targetFrameMs = 1000 / 30;
     let stars: Star[] = [];
     let shootingStars: ShootingStar[] = [];
     let nextShootingStarAt = 4 + Math.random() * 4;
@@ -239,7 +242,7 @@ export function BackgroundCanvas() {
       );
     };
 
-    const draw = (now: number) => {
+    const renderFrame = (now: number) => {
       const deltaSeconds = Math.min((now - lastFrame) / 1000, 0.05);
       lastFrame = now;
       elapsed += deltaSeconds;
@@ -254,19 +257,41 @@ export function BackgroundCanvas() {
       }
 
       drawShootingStars(deltaSeconds);
-      raf = requestAnimationFrame(draw);
+    };
+
+    const animate = (now: number) => {
+      if (!pageVisible) return;
+
+      const elapsedSinceRender = now - lastRenderedAt;
+      if (elapsedSinceRender >= targetFrameMs) {
+        renderFrame(now);
+        lastRenderedAt = now - (elapsedSinceRender % targetFrameMs);
+      }
+
+      raf = requestAnimationFrame(animate);
+    };
+
+    const handleVisibilityChange = () => {
+      pageVisible = !document.hidden;
+      cancelAnimationFrame(raf);
+
+      if (pageVisible && !reduceMotion) {
+        lastFrame = performance.now();
+        lastRenderedAt = 0;
+        raf = requestAnimationFrame(animate);
+      }
     };
 
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
     document.documentElement.addEventListener("pointerleave", handlePointerLeave);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     if (reduceMotion) {
-      draw(performance.now());
-      cancelAnimationFrame(raf);
+      renderFrame(performance.now());
     } else {
-      raf = requestAnimationFrame(draw);
+      raf = requestAnimationFrame(animate);
     }
 
     const timeout = window.setTimeout(() => setVisible(true), 60);
@@ -276,6 +301,7 @@ export function BackgroundCanvas() {
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", handlePointerMove);
       document.documentElement.removeEventListener("pointerleave", handlePointerLeave);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.clearTimeout(timeout);
     };
   }, []);

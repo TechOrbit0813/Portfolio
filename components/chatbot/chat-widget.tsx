@@ -1,8 +1,9 @@
 "use client";
 
 import { ChangeEvent, FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
-import { BASE_PATH } from "@/lib/data";
 import { MarkdownMessage } from "./markdown-message";
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 type ChatMessage = {
   id: string;
@@ -47,8 +48,8 @@ function getChatEndpoint() {
   return `${BASE_PATH}/api/chat` || "/api/chat";
 }
 
-export function ChatWidget() {
-  const [isOpen, setIsOpen] = useState(false);
+export function ChatWidget({ initiallyOpen = false }: { initiallyOpen?: boolean }) {
+  const [isOpen, setIsOpen] = useState(initiallyOpen);
   const [messages, setMessages] = useState<ChatMessage[]>([starterMessage]);
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
