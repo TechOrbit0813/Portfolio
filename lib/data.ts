@@ -470,6 +470,71 @@ export const projects: Project[] = [
     demo: "https://shop.sportsbox.ai/",
     source: "#",
   },
+  
+  {
+    title: "TheWeddingLink | Rapid Wedding Microsite Builder",
+    category: ["saas", "automation", "industry"],
+    image: "/assets/images/projects/theweddinglink.webp",
+    gallery: [
+      "/assets/optimized/gallery/theweddinglink-introduction.07375dadc3.webp",
+      "/assets/optimized/gallery/theweddinglink-workflow.d1bafff313.webp",
+      "/assets/optimized/gallery/theweddinglink-result.bdbd48ab95.webp",
+    ],
+    description:
+      "A template-driven wedding website builder that turns essential wedding details, schedules, RSVP settings, photos, and story content into a polished, shareable microsite through a short guided publish flow.",
+    stack: [
+      "Next.js/React",
+      "Node.js APIs",
+      'PostgreSQL',
+      "Template-Driven Microsites",
+      "Structured Content Models",
+      "RSVP Workflows",
+    ],
+    demo: "https://theweddinglink.co/",
+    source: "#",
+  },
+  {
+    title: "YesLovey | Customizable Wedding Microsites",
+    category: ["saas", "automation", "industry"],
+    image: "/assets/images/projects/yeslovey.webp",
+    gallery: [
+      "/assets/optimized/gallery/yeslovey-introduction.6d4791f513.webp",
+      "/assets/optimized/gallery/yeslovey-workflow.5b13204f55.webp",
+      "/assets/optimized/gallery/yeslovey-result.d8eaccd389.webp",
+    ],
+    description:
+      "A customizable wedding microsite platform that balances structured templates with controlled visual personalization, RSVP management, photos, registries, maps, countdowns, and post-publish editing.",
+    stack: [
+      "Vue.js",
+      "Laravel",
+      "MySQL",
+      "Google Maps API",
+    ],
+    demo: "https://yeslovey.com/",
+    source: "#",
+  },
+  {
+    title: "Planning.Wedding | Wedding Planning & Website Platform",
+    category: ["saas", "automation", "industry"],
+    image: "/assets/images/projects/planning-wedding.webp",
+    gallery: [
+      "/assets/optimized/gallery/planning-wedding-introduction.ea7ebae0f4.webp",
+      "/assets/optimized/gallery/planning-wedding-workflow.5513920225.webp",
+      "/assets/optimized/gallery/planning-wedding-result.740f5702ad.webp",
+    ],
+    description:
+      "An integrated wedding-planning platform where guest-facing microsites stay synchronized with centralized wedding data, RSVPs, schedules, photos, and planning workflows while private information remains separated.",
+    stack: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "PostgreSQL",
+      "RESTful API",
+      "Multi-Tenant SaaS",
+    ],
+    demo: "https://planning.wedding/",
+    source: "#",
+  },
   {
     title: "Boddle Learning | Adaptive K-6 Math Platform",
     category: ["ai", "industry"],
