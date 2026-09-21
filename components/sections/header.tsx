@@ -72,11 +72,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition ${
-        scrolled
+      className={`fixed inset-x-0 top-0 z-50 transition ${scrolled
           ? "bg-white/90 shadow-sm backdrop-blur dark:bg-slate-950/90"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#home" className="text-lg font-bold tracking-tight">
@@ -90,11 +89,10 @@ export function Header() {
               href={link.href}
               aria-current={active === link.href ? "page" : undefined}
               onClick={() => handleNavClick(link.href)}
-              className={`text-sm font-medium transition hover:text-brand ${
-                active === link.href
+              className={`text-sm font-medium transition hover:text-brand ${active === link.href
                   ? "text-brand"
                   : "text-slate-600 dark:text-slate-300"
-              }`}
+                }`}
             >
               {link.label}
             </a>
@@ -125,11 +123,10 @@ export function Header() {
                     handleNavClick(link.href);
                     setOpen(false);
                   }}
-                  className={`block rounded-md px-3 py-2 text-sm font-medium transition hover:text-brand ${
-                    active === link.href
+                  className={`block rounded-md px-3 py-2 text-sm font-medium transition hover:text-brand ${active === link.href
                       ? "bg-brand/10 text-brand"
                       : "text-slate-600 dark:text-slate-300"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>

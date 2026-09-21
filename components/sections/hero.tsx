@@ -153,9 +153,8 @@ export function Hero() {
             {hero.capabilities.map((capability, index) => (
               <li
                 key={capability.title}
-                className={`group flex min-h-28 items-center gap-4 rounded-2xl px-4 py-4 transition hover:bg-white/70 dark:hover:bg-white/[0.045] ${
-                  index > 0 ? "lg:border-l lg:border-slate-200/80 dark:lg:border-white/10" : ""
-                }`}
+                className={`group flex min-h-28 items-center gap-4 rounded-2xl px-4 py-4 transition hover:bg-white/70 dark:hover:bg-white/[0.045] ${index > 0 ? "lg:border-l lg:border-slate-200/80 dark:lg:border-white/10" : ""
+                  }`}
               >
                 <span
                   className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-xl ring-1 transition group-hover:-translate-y-1 ${capabilityTone[capability.tone]}`}

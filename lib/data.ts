@@ -24,20 +24,20 @@ export const profile = {
 export const hero = {
   availability: "Available for selected projects",
   headline: {
-    firstLine: "Senior Full-Stack",
-    secondLine: "AI Engineer",
+    firstLine: "AI Software",
+    secondLine: "Engineer",
   },
   description:
-    "I build secure, production-ready software that connects thoughtful product engineering with practical AI, reliable backend systems, and cloud operations.",
+    "I help companies turn complex software and AI ideas into systems they can actually ship and operate. I work independently and can also integrate with an existing engineering or product team. I’m comfortable taking ownership of architecture and implementation while communicating technical tradeoffs clearly to founders, product leaders, and other engineers.",
   technologies: [
-    { label: "AI and LLMs", icon: "fas fa-brain" },
-    { label: "Next.js", icon: "fas fa-n" },
+    { label: "C#, ASP.NET", icon: "fas fa-brain" },
+    { label: "LLMs", icon: "fas fa-n" },
     { label: "Node.js", icon: "fab fa-node-js" },
     { label: "Python", icon: "fab fa-python" },
     { label: "AWS and Azure", icon: "fas fa-cloud" },
   ],
   stats: [
-    { value: "22+", label: "Years in Software", icon: "fas fa-briefcase" },
+    { value: "12+", label: "Years in Software", icon: "fas fa-briefcase" },
     { value: "5+", label: "Years in AI", icon: "fas fa-brain" },
     { value: "End-to-End", label: "Production Ownership", icon: "fas fa-layer-group" },
   ],
@@ -470,7 +470,7 @@ export const projects: Project[] = [
     demo: "https://shop.sportsbox.ai/",
     source: "#",
   },
-  
+
   {
     title: "TheWeddingLink | Rapid Wedding Microsite Builder",
     category: ["saas", "automation", "industry"],

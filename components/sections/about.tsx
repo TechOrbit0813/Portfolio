@@ -202,11 +202,9 @@ export function About() {
                 {stats.map((stat, index) => (
                   <li
                     key={stat.value}
-                    className={`flex min-h-[140px] flex-col items-center justify-center px-2 text-center ${
-                      index > 0 ? "border-l border-slate-200/80 dark:border-[#15233a]" : ""
-                    } ${index === 2 ? "max-sm:border-l-0 max-sm:border-t" : ""} ${
-                      index === 3 ? "max-sm:border-t" : ""
-                    }`}
+                    className={`flex min-h-[140px] flex-col items-center justify-center px-2 text-center ${index > 0 ? "border-l border-slate-200/80 dark:border-[#15233a]" : ""
+                      } ${index === 2 ? "max-sm:border-l-0 max-sm:border-t" : ""} ${index === 3 ? "max-sm:border-t" : ""
+                      }`}
                   >
                     <i className={`${stat.icon} ${stat.iconClass} mb-[9px] text-[25px]`} aria-hidden="true" />
                     <strong className="text-[25px] font-semibold leading-none tracking-[-0.035em] text-slate-950 dark:text-white">
