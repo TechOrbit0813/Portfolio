@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { BackgroundCanvas } from "@/components/background-canvas";
-import { LazyChatWidget } from "@/components/chatbot/lazy-chat-widget";
+// import { LazyChatWidget } from "@/components/chatbot/lazy-chat-widget";
 import { RevealObserver } from "@/components/reveal-observer";
 
 export const metadata: Metadata = {
-  title: "Christopher Geyer | Senior Full-Stack AI Engineer",
+  title: "Denver Greene | AI Software Engineer",
   description:
-    "Christopher Geyer is a Senior Full-Stack AI Engineer in Noble, Oklahoma, specializing in production software, applied AI, cloud infrastructure, and reliable platform engineering.",
+    "Denver Greene is a AI Software Engineer in Savannah MO, specializing in production software, applied AI, cloud infrastructure, and reliable platform engineering.",
   openGraph: {
-    title: "Christopher Geyer | Senior Full-Stack AI Engineer",
+    title: "Denver Greene | AI Software Engineer",
     description:
-      "Senior Full-Stack AI Engineer building production-ready applications, AI workflows, secure backend systems, and cloud platforms.",
+      "AI Software Engineer building production-ready applications, AI workflows, secure backend systems, and cloud platforms.",
     type: "website",
   },
 };
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -44,7 +44,7 @@ export default function RootLayout({
         <BackgroundCanvas />
         <RevealObserver />
         {children}
-        <LazyChatWidget />
+        {/* <LazyChatWidget /> */}
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ const stats = [
   {
     icon: "fas fa-briefcase",
     iconClass: "text-violet-500",
-    value: "22+",
+    value: "12+",
     label: <>Years in<br />Software</>,
   },
   {
@@ -132,7 +132,7 @@ export function About() {
             </h2>
 
             <p className="mt-[18px] max-w-[575px] text-[15px] leading-[1.63] tracking-[-0.012em] text-slate-600 dark:text-slate-300">
-              I&apos;m a product-minded engineer with 22+ years in software and 5+ years focused on
+              I&apos;m a product-minded engineer with 12+ years in software and 5+ years focused on
               applied AI. My background spans full-stack product development, backend and data
               systems, cloud infrastructure, Linux operations, and production support.
             </p>
@@ -264,7 +264,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="mt-3 flex min-h-[67px] flex-col gap-3 rounded-[14px] border border-slate-200/90 bg-gradient-to-r from-white/95 to-blue-50/65 px-4 py-4 shadow-[0_14px_38px_rgba(15,23,42,0.06)] dark:border-[#1b2d49] dark:bg-none dark:bg-[#030b19]/90 dark:shadow-none sm:flex-row sm:items-center sm:gap-0 sm:px-8 sm:py-3">
+        {/* <div className="mt-3 flex min-h-[67px] flex-col gap-3 rounded-[14px] border border-slate-200/90 bg-gradient-to-r from-white/95 to-blue-50/65 px-4 py-4 shadow-[0_14px_38px_rgba(15,23,42,0.06)] dark:border-[#1b2d49] dark:bg-none dark:bg-[#030b19]/90 dark:shadow-none sm:flex-row sm:items-center sm:gap-0 sm:px-8 sm:py-3">
           <div className="flex w-full min-w-0 items-center gap-3 sm:w-auto sm:min-w-[267px] sm:gap-[18px]">
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-violet-100/80 dark:bg-violet-500/10 sm:contents">
               <i className="fas fa-quote-left text-[22px] text-violet-500 sm:text-[32px]" aria-hidden="true" />
@@ -278,7 +278,7 @@ export function About() {
             Build secure, observable systems that are straightforward to operate and reliable over time.
           </p>
           <i className="fas fa-shield-halved ml-5 hidden text-[27px] text-blue-500 sm:block" aria-hidden="true" />
-        </div>
+        </div> */}
       </div>
     </section>
   );

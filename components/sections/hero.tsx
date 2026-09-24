@@ -147,32 +147,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-
-        <div className="mt-12 overflow-hidden rounded-[1.5rem] border border-slate-200/80 bg-white/50 p-3 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:p-4 lg:mt-14 dark:border-white/10 dark:bg-slate-900/45 dark:shadow-black/20">
-          <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            {hero.capabilities.map((capability, index) => (
-              <li
-                key={capability.title}
-                className={`group flex min-h-28 items-center gap-4 rounded-2xl px-4 py-4 transition hover:bg-white/70 dark:hover:bg-white/[0.045] ${index > 0 ? "lg:border-l lg:border-slate-200/80 dark:lg:border-white/10" : ""
-                  }`}
-              >
-                <span
-                  className={`grid h-14 w-14 shrink-0 place-items-center rounded-2xl text-xl ring-1 transition group-hover:-translate-y-1 ${capabilityTone[capability.tone]}`}
-                >
-                  <i className={capability.icon} aria-hidden="true" />
-                </span>
-                <span>
-                  <strong className="block text-sm font-semibold text-slate-900 dark:text-white">
-                    {capability.title}
-                  </strong>
-                  <span className="mt-1 block text-xs leading-5 text-slate-500 dark:text-slate-400">
-                    {capability.text}
-                  </span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   );

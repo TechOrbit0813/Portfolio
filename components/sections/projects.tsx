@@ -37,8 +37,8 @@ export function Projects() {
       filter === "all"
         ? visibleProjectsList
         : visibleProjectsList.filter((project) =>
-            project.category.includes(filter)
-          ),
+          project.category.includes(filter)
+        ),
     [filter]
   );
 
@@ -99,7 +99,7 @@ export function Projects() {
                 </div>
                 <div className="px-3 text-center last:pr-0">
                   <strong className="block text-2xl font-semibold text-brand">
-                    22+
+                    12+
                   </strong>
                   <span className="mt-1 block text-[11px] uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                     Years experience
@@ -123,18 +123,16 @@ export function Projects() {
                       setFilter(item.key);
                       setExpanded(false);
                     }}
-                    className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${
-                      active
+                    className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${active
                         ? "bg-slate-950 text-white shadow-lg shadow-slate-950/15 dark:bg-white dark:text-slate-950"
                         : "text-slate-600 hover:bg-white hover:text-slate-950 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-white"
-                    }`}
+                      }`}
                     aria-pressed={active}
                   >
                     {item.key !== "all" && (
                       <i
-                        className={`${categoryIcons[item.key]} text-xs ${
-                          active ? "text-brand" : "text-slate-400"
-                        }`}
+                        className={`${categoryIcons[item.key]} text-xs ${active ? "text-brand" : "text-slate-400"
+                          }`}
                       />
                     )}
                     {item.label}
@@ -237,11 +235,10 @@ export function Projects() {
                       ? `View ${featuredProject.title} gallery`
                       : `${featuredProject.title} project preview`
                   }
-                  className={`relative min-h-[20rem] overflow-hidden border-t border-slate-200 bg-slate-100 text-left dark:border-slate-800 dark:bg-slate-900 lg:min-h-[36rem] lg:border-l lg:border-t-0 ${
-                    featuredProject.gallery?.length
+                  className={`relative min-h-[20rem] overflow-hidden border-t border-slate-200 bg-slate-100 text-left dark:border-slate-800 dark:bg-slate-900 lg:min-h-[36rem] lg:border-l lg:border-t-0 ${featuredProject.gallery?.length
                       ? "cursor-pointer"
                       : "cursor-default"
-                  }`}
+                    }`}
                 >
                   <div className="absolute inset-x-0 top-0 z-10 flex h-10 items-center gap-2 border-b border-white/10 bg-slate-950/75 px-4 backdrop-blur-md">
                     <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
@@ -253,11 +250,10 @@ export function Projects() {
                     image={featuredProject.image}
                     alt={featuredProject.title}
                     sizes="(min-width: 1024px) 56vw, 100vw"
-                    className={`h-full min-h-[20rem] w-full object-cover object-top pt-10 transition duration-700 lg:min-h-[36rem] ${
-                      featuredProject.gallery?.length
+                    className={`h-full min-h-[20rem] w-full object-cover object-top pt-10 transition duration-700 lg:min-h-[36rem] ${featuredProject.gallery?.length
                         ? "group-hover:scale-[1.025]"
                         : ""
-                    }`}
+                      }`}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/38 via-transparent to-transparent" />
                   {featuredProject.gallery?.length ? (
@@ -292,17 +288,15 @@ export function Projects() {
                           ? `View ${project.title} gallery`
                           : `${project.title} project preview`
                       }
-                      className={`relative aspect-[16/9] overflow-hidden border-b border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900 ${
-                        hasGallery ? "cursor-pointer" : "cursor-default"
-                      }`}
+                      className={`relative aspect-[16/9] overflow-hidden border-b border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900 ${hasGallery ? "cursor-pointer" : "cursor-default"
+                        }`}
                     >
                       <ProjectImage
                         image={project.image}
                         alt={project.title}
                         sizes="(min-width: 768px) 50vw, 100vw"
-                        className={`h-full w-full object-cover object-top transition duration-700 ${
-                          hasGallery ? "group-hover:scale-105" : ""
-                        }`}
+                        className={`h-full w-full object-cover object-top transition duration-700 ${hasGallery ? "group-hover:scale-105" : ""
+                          }`}
                       />
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-80" />
                       <div className="absolute left-5 top-5 flex flex-wrap gap-2">
@@ -391,9 +385,8 @@ export function Projects() {
                 className="inline-flex items-center gap-3 rounded-xl border border-slate-300 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-brand hover:text-brand hover:shadow-lg dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-200 dark:hover:border-brand dark:hover:text-brand"
               >
                 <i
-                  className={`fas ${
-                    expanded ? "fa-chevron-up" : "fa-chevron-down"
-                  } text-xs`}
+                  className={`fas ${expanded ? "fa-chevron-up" : "fa-chevron-down"
+                    } text-xs`}
                 />
                 {expanded
                   ? "Show fewer projects"

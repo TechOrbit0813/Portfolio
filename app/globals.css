@@ -21,7 +21,11 @@ body {
 }
 
 
-.reveal {
+/* Content is visible by default. JS "arms" it (see reveal-observer.tsx) to
+   hide it and animate it back in on scroll, so a page that opens with
+   JavaScript failed, blocked, or delayed never loses real content to a
+   fade-in that never fires. */
+.reveal.reveal-armed {
   opacity: 0;
   transition:
     opacity 700ms ease-out var(--reveal-delay, 0ms),
@@ -29,19 +33,19 @@ body {
   will-change: opacity, transform;
 }
 
-.reveal[data-reveal-direction="up"] {
+.reveal.reveal-armed[data-reveal-direction="up"] {
   transform: translateY(2rem);
 }
 
-.reveal[data-reveal-direction="left"] {
+.reveal.reveal-armed[data-reveal-direction="left"] {
   transform: translateX(-2rem);
 }
 
-.reveal[data-reveal-direction="right"] {
+.reveal.reveal-armed[data-reveal-direction="right"] {
   transform: translateX(2rem);
 }
 
-.reveal.is-revealed {
+.reveal.reveal-armed.is-revealed {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   will-change: auto;

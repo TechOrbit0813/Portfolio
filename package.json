@@ -1,5 +1,5 @@
 {
-  "name": "chris-geyer-portfolio",
+  "name": "denver-greene-portfolio",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "build:static": "node scripts/build-static.mjs"
   },
   "dependencies": {
-    "next": "^16.3.5",
+    "next": "^16.3.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },

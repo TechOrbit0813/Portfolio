@@ -20,14 +20,14 @@ const starterMessage: ChatMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hi, I’m Chris’s portfolio assistant. Ask me about his experience, technical skills, AI work, or project background.",
+    "Hi, I’m Denver’s portfolio assistant. Ask me about his experience, technical skills, AI work, or project background.",
 };
 
 const suggestedQuestions = [
-  "What kind of AI systems has Chris built?",
-  "Which cloud platforms does Chris use?",
-  "Summarize Chris’s full-stack experience.",
-  "Which projects best show Chris’s experience?",
+  "What kind of AI systems has Denver built?",
+  "Which cloud platforms does Denver use?",
+  "Summarize Denver’s full-stack experience.",
+  "Which projects best show Denver’s experience?",
 ];
 
 function makeMessageId() {
@@ -45,7 +45,7 @@ function getChatEndpoint() {
     return configuredEndpoint;
   }
 
-  return `${BASE_PATH}/api/chat` || "/api/chat";
+  return `${BASE_PATH}/api/chat/` || "/api/chat/";
 }
 
 export function ChatWidget({ initiallyOpen = false }: { initiallyOpen?: boolean }) {
@@ -163,7 +163,7 @@ export function ChatWidget({ initiallyOpen = false }: { initiallyOpen?: boolean 
     <div className="fixed bottom-5 right-4 z-[80] sm:bottom-6 sm:right-6">
       {isOpen ? (
         <section
-          aria-label="Chris Geyer portfolio assistant"
+          aria-label="Denver Greene portfolio assistant"
           className="mb-3 flex h-[min(650px,calc(100vh-7rem))] w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.24)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/95"
         >
           <header className="relative overflow-hidden bg-gradient-to-br from-brand via-brand-dark to-[#27187e] px-5 pb-4 pt-5 text-white">
@@ -179,7 +179,7 @@ export function ChatWidget({ initiallyOpen = false }: { initiallyOpen?: boolean 
                   <h2 className="truncate text-base font-semibold">Portfolio Assistant</h2>
                   <p className="mt-0.5 flex items-center gap-1.5 text-xs text-blue-100">
                     <span className="h-2 w-2 rounded-full bg-emerald-300" />
-                    Ask about Chris’s work
+                    Ask about Denver’s work
                   </p>
                 </div>
               </div>

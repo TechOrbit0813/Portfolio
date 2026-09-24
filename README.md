@@ -1,6 +1,6 @@
-# Christopher Geyer Portfolio
+# Denver Greene Portfolio
 
-Personal portfolio site for Christopher Geyer, Senior Full-Stack AI Engineer based in Noble, Oklahoma. The site presents experience across product engineering, applied AI, backend and data systems, cloud infrastructure, Linux operations, security, and observability.
+Personal portfolio site for Denver Greene, AI Software Engineer based in Savannah MO. The site presents experience across product engineering, applied AI, backend and data systems, cloud infrastructure, Linux operations, security, and observability.
 
 ## Technology Stack
 
@@ -35,7 +35,7 @@ app/
   globals.css       Tailwind entry, theme tokens, and animations
 components/
   chatbot/          Floating portfolio assistant interface
-  sections/         Hero, about, experience, projects, certifications, skills, education, and contact
+  sections/         Hero, about, experience, projects, skills, education, and contact
   shared files      Theme, reveal, heading, skill, and navigation utilities
 lib/
   chatbot-knowledge.ts  Builds chatbot context from portfolio data

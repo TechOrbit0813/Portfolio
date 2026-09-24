@@ -10,7 +10,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-id";
 
 const contactItems = [
   { icon: "fas fa-envelope", label: "Email", value: profile.email, href: `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}` },
-  { icon: "fab fa-github", label: "GitHub", value: "github.com/chrisgeyer1215", href: profile.github },
+  { icon: "fab fa-github", label: "GitHub", value: profile.github.replace(/^https?:\/\//, ""), href: profile.github },
   { icon: "fas fa-map-marker-alt", label: "Location", value: profile.location },
 ];
 

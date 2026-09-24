@@ -42,6 +42,12 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: { unoptimized: true },
   trailingSlash: true,
+  // Allows the dev server to be reached from other devices on the LAN
+  // (e.g. http://192.168.x.x:3000) without Next.js 16's dev-only
+  // cross-origin guard blocking JS chunks and the HMR websocket with a 403.
+  // Has no effect in production. Add more entries here if your LAN IP
+  // changes or you test from other private-network ranges.
+  allowedDevOrigins: ["192.168.0.56", "192.168.*.*"],
 };
 
 export default nextConfig;

@@ -6,16 +6,16 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export const asset = (path: string) => `${BASE_PATH}${path}`;
 
 export const profile = {
-  name: "Christopher Geyer",
-  shortName: "Chris",
-  title: "Senior Full-Stack AI Engineer",
-  location: "Noble, Oklahoma",
-  email: "chrisgeyer1215@gmail.com",
-  phone: "(720) 549-0914",
-  phoneHref: "tel:+17205490914",
-  github: "https://github.com/chrisgeyer1215",
+  name: "Denver Greene",
+  shortName: "Denver",
+  title: "AI Software Engineer",
+  location: "Savannah, MO",
+  email: "greenedenver771@gmail.com",
+  phone: "(702) 899-0350",
+  phoneHref: "tel:+17028990350",
+  github: "https://github.com/TechOrbit0813",
   linkedin: "#",
-  resume: "https://drive.google.com/file/d/1PMfL9pVfule9d7QULvhq2L5rwcTntyMH/",
+  resume: "/assets/Resume.pdf",
   photo: "/assets/optimized/profile/profile-364.7ef96494dc.webp",
   tagline:
     "I help teams design, build, and improve production software across full-stack applications, AI workflows, cloud infrastructure, and operational automation.",
@@ -47,33 +47,7 @@ export const hero = {
     { label: "PostgreSQL", icon: "fas fa-database" },
     { label: "Docker", icon: "fab fa-docker" },
     { label: "OpenAI", icon: "fas fa-circle-nodes" },
-  ],
-  capabilities: [
-    {
-      title: "Full-Stack Product Engineering",
-      text: "Responsive applications, dependable APIs, and maintainable product architecture",
-      icon: "fas fa-code",
-      tone: "blue",
-    },
-    {
-      title: "AI Systems and Automation",
-      text: "LLM workflows, RAG, agents, document processing, and operational automation",
-      icon: "fas fa-brain",
-      tone: "purple",
-    },
-    {
-      title: "Cloud and Platform Engineering",
-      text: "AWS, Azure, Linux, containers, CI/CD, monitoring, and hybrid infrastructure",
-      icon: "fas fa-cloud",
-      tone: "green",
-    },
-    {
-      title: "Security and Reliability",
-      text: "Least-privilege access, secure data workflows, observability, and recovery planning",
-      icon: "fas fa-shield-halved",
-      tone: "orange",
-    },
-  ],
+  ]
 };
 
 export const navLinks = [
@@ -81,15 +55,15 @@ export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#certifications", label: "Certifications" },
+  // { href: "#certifications", label: "Certifications" },
   { href: "#skills", label: "Skills" },
   { href: "#education", label: "Education" },
-  // { href: "#contact", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const about = {
   paragraphs: [
-    "I began my software career in 2004 after completing a bachelor's degree in Computer Science. My early work centered on business websites, database-driven applications, technical support, and practical systems for small organizations. That experience taught me to connect implementation decisions with the people, processes, and business goals behind the software.",
+    "I began my software career after completing a bachelor's degree in Computer Science. My early work centered on business websites, database-driven applications, technical support, and practical systems for small organizations. That experience taught me to connect implementation decisions with the people, processes, and business goals behind the software.",
     "As my responsibilities expanded, I moved across frontend engineering, backend services, APIs, databases, and cloud delivery. During more than eleven years at Clevyr, I helped build and maintain enterprise applications, SaaS platforms, client portals, and internal systems while improving performance, security, reliability, and long-term maintainability.",
     "My background also includes hands-on platform operations. I have built and hardened Linux environments, supported AWS and Azure infrastructure, worked with Docker and Kubernetes, automated delivery through CI/CD, managed PostgreSQL workloads, and implemented monitoring across more than 100 servers, virtual machines, devices, and endpoints.",
     "For the past five years, I have focused increasingly on applied AI. My work includes LLM integrations, RAG systems, AI agents, conversational interfaces, document automation, and intelligent workflows using OpenAI, Claude, LangChain, Python, Node.js, and modern cloud platforms. I focus on moving AI beyond prototypes and into dependable product workflows.",
@@ -225,58 +199,45 @@ export const skills: { icon: string; title: string; items: Skill[] }[] = [
 
 export const experience = [
   {
-    title: "Freelance Senior Full-Stack and AI SaaS Developer",
-    company: "Independent Consulting",
-    location: "Remote | Noble, OK",
-    period: "December 2025 to Present",
+    title: "Senior AI Engineer & LLM Developer",
+    company: "Microsoft Corporation",
+    location: "Creve Coeur, MO",
+    period: "April 2024 - May 2026",
     points: [
-      "Provide full-stack engineering, AI integration, SaaS development, and technical consulting for startups, small businesses, and distributed teams.",
-      "Build production-ready web applications, AI-enabled dashboards, automation workflows, API integrations, and cloud deployment foundations.",
-      "Help clients move from product definition to delivery while improving architecture, maintainability, security, and operational readiness.",
+      "Designed and delivered production AI/LLM solutions using C#, Python, Azure OpenAI, RAG, embeddings, and vector search.",
+      "Built AI agents, document-processing pipelines, semantic search, and structured data extraction workflows.",
     ],
   },
   {
-    title: "Senior Full-Stack Developer",
-    company: "Clevyr, Inc.",
-    location: "Oklahoma City, OK",
-    period: "May 2014 to November 2025",
+    title: "Senior Full-stack Engineer",
+    company: "TechSoft LLC",
+    location: "Chesterfield, MO",
+    period: "June 2020 - November 2023",
     points: [
-      "Built and maintained enterprise web applications, client portals, SaaS platforms, and internal business systems across frontend, backend, data, and deployment layers.",
-      "Improved API reliability, database performance, application maintainability, and production support across long-lived codebases.",
-      "Modernized legacy systems, supported third-party integrations, and worked with stakeholders to translate operational requirements into maintainable software.",
-      "Helped build, harden, monitor, and maintain a customized openSUSE-based Linux environment supporting more than 100 infrastructure assets.",
+      "Developed and maintained SaaS and enterprise applications using C#/.NET Core, ASP.NET Core, React, TypeScript, PostgreSQL, and REST APIs.",
+      "Designed backend services, authentication systems, integrations, background processing, and complex business workflows.",
+      "Implemented Docker and CI/CD pipelines to streamline development, testing, and production releases.",
     ],
   },
   {
-    title: "Full-Stack Web Developer",
-    company: "Malloy Digital LLC",
-    location: "Norman, OK",
-    period: "March 2011 to April 2014",
+    title: "C#, .Net Expert",
+    company: "Impact Technologies",
+    location: "Chesterfield, MO",
+    period: "March 2016 - April 2020",
     points: [
-      "Developed business websites, custom web applications, CRM tools, and database-driven platforms for local and regional clients.",
-      "Implemented frontend interfaces, backend functionality, API integrations, and practical user-experience improvements.",
-      "Supported database design, troubleshooting, application maintenance, and incremental delivery for client-facing systems.",
+      "Built out scalable cloud-native services on AWS to support global manufacturing and supply chain operations.",
+      "Streamlined internal workflows by designing and implementing developer-friendly RESTful services and automated CI/CD pipelines.",
+      "Managed large-scale NoSQL databases, ensuring high availability and data integrity across distributed systems.",
     ],
-  },
-  {
-    title: "Junior Web Developer",
-    company: "Red Sun Digital",
-    location: "Norman, OK",
-    period: "August 2004 to February 2011",
-    points: [
-      "Started my professional software career building and maintaining small-business websites and database-backed web applications.",
-      "Handled technical support, content and database updates, troubleshooting, and direct communication with clients.",
-      "Developed a practical foundation in production support, web standards, server-side development, and dependable delivery.",
-    ],
-  },
+  }
 ];
 
 export const education = [
   {
-    degree: "Bachelor's Degree in Computer Science",
-    school: "East Central University | Ada, Oklahoma | 1999 to 2003",
+    degree: "Bachelor of Computer Science",
+    school: "Webster University | Missouri, USA | 2013 - 2017",
     description:
-      "Completed undergraduate study focused on software development, programming fundamentals, database systems, web technologies, algorithms, object-oriented programming, systems analysis, and practical application development.",
+      "Focused on software engineering, algorithms, databases, and distributed systems, with a strong foundation in C#, .NET, and modern application development.",
     highlights: ["Software Engineering", "Algorithms", "Database Systems", "Web Technologies"],
   },
 ];
@@ -320,55 +281,55 @@ export const additionalCertificates: AdditionalCertificate[] = [
   {
     title: "Python",
     image: "/assets/optimized/certificates/python_basic-certificate.862c263f3b.webp",
-    alt: "HackerRank Python Basic certificate earned by Chris Geyer",
+    alt: "HackerRank Python Basic certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/a671879b6c49",
   },
   {
     title: "Go",
     image: "/assets/optimized/certificates/golang_intermediate-certificate.317649b5bc.webp",
-    alt: "HackerRank Go Intermediate certificate earned by Chris Geyer",
+    alt: "HackerRank Go Intermediate certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/ca693d4fa588",
   },
   {
     title: "C#",
     image: "/assets/optimized/certificates/c_sharp_basic-certificate.49cb0d8f8d.webp",
-    alt: "HackerRank C# Basic certificate earned by Chris Geyer",
+    alt: "HackerRank C# Basic certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/970365848f94",
   },
   {
     title: "React",
     image: "/assets/optimized/certificates/react_basic-certificate.49cb0d8f8d.webp",
-    alt: "HackerRank React Basic certificate earned by Chris Geyer",
+    alt: "HackerRank React Basic certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/65ba3280192d",
   },
   {
     title: "JavaScript",
     image: "/assets/optimized/certificates/javascript_intermediate-certificate.4bc0f9c062.webp",
-    alt: "HackerRank JavaScript Intermediate certificate earned by Chris Geyer",
+    alt: "HackerRank JavaScript Intermediate certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/931df84abdf1",
   },
   {
     title: "SQL (Advanced)",
     image: "/assets/optimized/certificates/sql_advanced-certificate.317649b5bc.webp",
-    alt: "HackerRank SQL Advanced certificate earned by Chris Geyer",
+    alt: "HackerRank SQL Advanced certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/b4ce03443763",
   },
   {
     title: "Frontend Developer",
     image: "/assets/optimized/certificates/frontend_developer_react-certificate.acf569609e.webp",
-    alt: "HackerRank Frontend Developer React certificate earned by Chris Geyer",
+    alt: "HackerRank Frontend Developer React certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/efa1bdb505b7",
   },
   {
     title: "REST API",
     image: "/assets/optimized/certificates/rest_api_intermediate-certificate.a4341a3559.webp",
-    alt: "HackerRank REST API Intermediate certificate earned by Chris Geyer",
+    alt: "HackerRank REST API Intermediate certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/33d9a4e62ac2",
   },
   {
     title: "Software Engineer",
     image: "/assets/optimized/certificates/software_engineer-certificate.6e8456a0a4.webp",
-    alt: "HackerRank Software Engineer certificate earned by Chris Geyer",
+    alt: "HackerRank Software Engineer certificate earned by Denver Greene",
     href: "https://www.hackerrank.com/certificates/iframe/c0a52353d35f",
   },
 ];
@@ -468,29 +429,6 @@ export const projects: Project[] = [
       "A motion-analysis and coaching platform that converts golf swings into 3D performance data, visual feedback, and actionable insights for athletes and coaches.",
     stack: ["React", "Python", "Computer Vision", "3D Motion Data", "Cloud APIs", "Analytics"],
     demo: "https://shop.sportsbox.ai/",
-    source: "#",
-  },
-
-  {
-    title: "TheWeddingLink | Rapid Wedding Microsite Builder",
-    category: ["saas", "automation", "industry"],
-    image: "/assets/images/projects/theweddinglink.webp",
-    gallery: [
-      "/assets/optimized/gallery/theweddinglink-introduction.07375dadc3.webp",
-      "/assets/optimized/gallery/theweddinglink-workflow.d1bafff313.webp",
-      "/assets/optimized/gallery/theweddinglink-result.bdbd48ab95.webp",
-    ],
-    description:
-      "A template-driven wedding website builder that turns essential wedding details, schedules, RSVP settings, photos, and story content into a polished, shareable microsite through a short guided publish flow.",
-    stack: [
-      "Next.js/React",
-      "Node.js APIs",
-      'PostgreSQL',
-      "Template-Driven Microsites",
-      "Structured Content Models",
-      "RSVP Workflows",
-    ],
-    demo: "https://theweddinglink.co/",
     source: "#",
   },
   {
